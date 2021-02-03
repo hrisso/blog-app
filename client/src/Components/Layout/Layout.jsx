@@ -7,7 +7,6 @@ const Layout = (props) => (
     <div className="layout-children">
       {props.children}
     </div>
-
   </div>
 )
 export default Layout;
