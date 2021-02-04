@@ -43,7 +43,7 @@ const PostDetails = (props) => {
           <p>{post.content}</p>
           <h2>{post.genre}</h2>
         </div> 
-        <button>edit</button> 
+        <button><Link to={`/post-edit/${post._id}`}>edit</Link></button> 
         <button onClick={ handleDelete }>delete</button>
       </Layout>
     </div>
