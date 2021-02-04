@@ -1,14 +1,15 @@
 import "./PostDetails.css";
 import Layout from "../../Components/Layout/Layout" 
-import { useParams, Link } from "react-router-dom";
-import { getPost} from "../../Services/Post"
+import { useParams, Link, Redirect } from "react-router-dom";
+import { getPost,deletePost} from "../../Services/Post"
 import { useState, useEffect } from "react"; 
 
 
 const PostDetails = (props) => { 
   const { id } = useParams() 
   const [post, setPost] = useState(null) 
-  const [isLoaded, setLoaded] = useState(false)  
+  const [isLoaded, setLoaded] = useState(false) 
+  const [isDeleted,setDeleted] = useState(false)
   
   useEffect(() => {
     const fetchPost = async () => {
@@ -18,15 +19,21 @@ const PostDetails = (props) => {
       
     } 
     fetchPost()
-},[id])
+  }, [id]) 
+  const handleDelete = () => {
+    deletePost(post._id)
+    setDeleted(true)
+  }
 
   if (!isLoaded) {
     return (
       <h1>Loading...... its not me</h1>
     )  
   }
-  console.log(id)
-  
+
+  if ( isDeleted ) {
+    return <Redirect to={`/`}/>
+  }
   return (
     <div>
       <Layout>
@@ -35,7 +42,9 @@ const PostDetails = (props) => {
           <h2>{post.title}</h2>  
           <p>{post.content}</p>
           <h2>{post.genre}</h2>
-        </div>
+        </div> 
+        <button>edit</button> 
+        <button onClick={ handleDelete }>delete</button>
       </Layout>
     </div>
   )
