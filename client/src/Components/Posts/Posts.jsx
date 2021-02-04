@@ -17,7 +17,7 @@ class Posts extends Component {
   // console.log(posts)
   render() {
     const postsList = this.state.posts.map((post, index) => (
-      <Link to="/post-details/:id">
+      <Link to={`/post-details/${post._id}`}>
       <div className="posts">
         <h3>{post.author}</h3>
         <h3>{post.title}</h3>
