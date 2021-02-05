@@ -5,9 +5,11 @@ const Nav = (props) => (
   <nav>
     <div className="Nav">
       <NavLink to="/">Blog App</NavLink>
-      <NavLink to="/AddPost">Add Post</NavLink>
-      <NavLink to="/">Posts</NavLink>
-
+    </div>
+      <div className="nav-right">
+        <NavLink to="/AddPost">Add Post</NavLink>
+        <NavLink to="/">Posts</NavLink>
+      
     </div>
   </nav>
 )

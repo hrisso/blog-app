@@ -37,14 +37,14 @@ const PostDetails = (props) => {
   return (
     <div>
       <Layout>
-        <div>
-          <h1>{post.author}</h1> 
-          <h2>{post.title}</h2>  
+        <div className="details">
+          <h2>Author: {post.author}</h2> 
+          <h1>{post.title}</h1>  
           <p>{post.content}</p>
-          <h2>{post.genre}</h2>
-        </div> 
+          <h2>Genre: {post.genre}</h2>
         <button><Link to={`/post-edit/${post._id}`}>edit</Link></button> 
         <button onClick={ handleDelete }>delete</button>
+        </div>
       </Layout>
     </div>
   )
