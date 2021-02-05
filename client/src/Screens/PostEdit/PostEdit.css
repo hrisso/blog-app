@@ -1,0 +1,26 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+input,
+textarea {
+  width: 50%;
+  margin: 8px;
+  padding: 2px;
+}
+
+
+button {
+  background-color: #0075c4;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 20px;
+  color: black;
+  padding: 10px 20px;
+  margin: 5px;
+  width: 100px;
+}

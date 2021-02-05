@@ -1,0 +1,27 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  background-color: #ffa630;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 20px;
+  align-items: center;
+}
+
+.nav-right a {
+  padding: 0 20px;
+}
+
+.Nav {
+  font-size: 25px;
+  font-weight: 700;
+  padding-left: 30px;
+}
+
+nav a:hover{
+  border-bottom: 1px solid #0b132bff;
+}
